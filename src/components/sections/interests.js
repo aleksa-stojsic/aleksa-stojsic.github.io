@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import Img from "gatsby-image"
-import { motion, useAnimation } from "framer-motion"
+import { motion, useAnimation } from "framer-motion"
 
 import { detectMobileAndTablet, isSSR } from "../../utils"
-import { useOnScreen }  from "../../hooks/"
+import { useOnScreen } from "../../hooks/"
 import ContentWrapper from "../../styles/ContentWrapper"
 import Button from "../../styles/Button"
 
@@ -24,15 +24,15 @@ const StyledContentWrapper = styled(ContentWrapper)`
     flex-direction: column;
     justify-content: center;
     padding-right: 0;
-    padding-left: 0;
-    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding-left: 2.5rem;
+    @media (min-width: ${({ theme }) => theme.breakpoints.xs}) {
       padding-right: 2.5rem;
       padding-left: 2.5rem;
     }
     .section-title {
       padding-right: 2.5rem;
-      padding-left: 2.5rem;
-      @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+      padding-left: 0;
+      @media (min-width: ${({ theme }) => theme.breakpoints.xs}) {
         padding-right: 0;
         padding-left: 0;
       }
@@ -52,7 +52,7 @@ const StyledInterests = styled.div`
   column-gap: 1rem;
   row-gap: 1rem;
   padding: 0 2.5rem;
-  overflow-x: scroll;
+  overflow-x: hidden;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   &::-webkit-scrollbar {
@@ -64,7 +64,19 @@ const StyledInterests = styled.div`
     width: ${({ itemCount }) =>
       Math.ceil(itemCount / 2) % 2 === 1 ? "17.125rem" : "2.5rem"};
   }
-  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.test3}) {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, 9.813rem);
+    overflow: visible;
+    padding: 0;
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.test3}) {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, 15.625rem);
+    overflow: visible;
+    padding: 0;
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.test2}) {
     grid-auto-flow: row;
     grid-template-columns: repeat(3, 15.625rem);
     overflow: visible;
@@ -102,6 +114,9 @@ const StyledInterests = styled.div`
     padding: 1rem;
     border: 0.125rem solid ${({ theme }) => theme.colors.primary};
     border-radius: ${({ theme }) => theme.borderRadius};
+    @media (max-width: ${({ theme }) => theme.breakpoints.test3}) {
+      width: 9.813rem;
+    }
     .icon {
       margin-right: 0.5rem;
     }
@@ -135,7 +150,9 @@ const Interests = ({ content }) => {
         // i receives the value of the custom prop - can be used to stagger
         // the animation of each "interest" element
         await iControls.start(i => ({
-          opacity: 1, scaleY: 1, transition: { delay: i * 0.1 }
+          opacity: 1,
+          scaleY: 1,
+          transition: { delay: i * 0.1 },
         }))
         await bControls.start({ opacity: 1, scaleY: 1 })
       }
@@ -151,14 +168,14 @@ const Interests = ({ content }) => {
         <h3 className="section-title">{frontmatter.title}</h3>
         <StyledInterests itemCount={interests.length} ref={ref}>
           {interests.slice(0, shownInterests).map(({ name, icon }, key) => (
-            <motion.div 
-              className="interest" 
-              key={key} 
-              custom={key} 
+            <motion.div
+              className="interest"
+              key={key}
+              custom={key}
               initial={{ opacity: 0, scaleY: 0 }}
               animate={iControls}
             >
-                <Img className="icon" fixed={icon.childImageSharp.fixed} /> {name}
+              <Img className="icon" fixed={icon.childImageSharp.fixed} /> {name}
             </motion.div>
           ))}
           {shownInterests < interests.length && (
