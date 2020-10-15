@@ -25,7 +25,3 @@ The starter is designed with a mobile-first approach and looks perfect on small 
 #### <img src="http://logok.org/wp-content/uploads/2015/10/Medium-logo-old.png" alt="Medium Icon" width="20" /> Medium Integration - Features latest articles.
 
 In case you are a writer on Medium, the starter has a easy to use Medium integration that allows you to feature your latest articles.
-
-To see all features in action, have a look at the <a href="https://gatsby-starter-portfolio-minimal.netlify.app/" target="_blank"><strong>live demo</strong></a>.
-
----
