@@ -67,16 +67,24 @@ const Contact = ({ content }) => {
   const onScreen = useOnScreen(ref)
   const variants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 } 
+    visible: { opacity: 1, y: 0 },
   }
 
   return (
-    <StyledSection id="contact" ref={ref} variants={variants} animate={onScreen ? "visible" : "hidden"}>
+    <StyledSection
+      id="contact"
+      ref={ref}
+      variants={variants}
+      animate={onScreen ? "visible" : "hidden"}
+    >
       <StyledContentWrapper>
         <h3>{frontmatter.title}</h3>
         <MDXRenderer>{body}</MDXRenderer>
         <div className="profile">
-          <Img className="avatar" fluid={frontmatter.profileImage.childImageSharp.fluid} />
+          <Img
+            className="avatar"
+            fluid={frontmatter.profileImage.childImageSharp.fluid}
+          />
           <div className="details">
             <strong>{frontmatter.name}</strong>
             <br />
@@ -87,7 +95,7 @@ const Contact = ({ content }) => {
             </a>
           </div>
         </div>
-        <Social width="9rem" padding="0.5rem 1.25rem" withIcon />
+        <Social width="100%" padding="0.5rem 1.25rem" withIcon />
       </StyledContentWrapper>
     </StyledSection>
   )

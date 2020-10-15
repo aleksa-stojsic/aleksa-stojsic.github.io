@@ -10,10 +10,10 @@ const { socialMedia } = config
 const StyledSocialWrapper = styled.div`
   display: grid;
   /* Calculate columns, depending on how many profiles there are */
-  grid-template-columns: repeat(${({ itemCount }) => itemCount - 1}, auto);
-  justify-content: start;
-  justify-items: start;
-
+  grid-template-columns: repeat(${({ itemCount }) => itemCount - 2}, auto);
+  justify-items: stretch;
+  justify-content: normal;
+  text-align: center;
   margin-left: -2.5rem;
   margin-right: -2.5rem;
   padding-left: 2.5rem;
@@ -26,8 +26,14 @@ const StyledSocialWrapper = styled.div`
     display: none;
   }
 
+  @media (min-width: ${({ theme }) => theme.breakpoints.xxs}) {
+    grid-template-columns: repeat(${({ itemCount }) => itemCount - 1}, auto);
+    justify-content: flex-start;
+    column-gap: 0.5rem;
+  }
   @media (min-width: ${({ theme }) => theme.breakpoints.test}) {
     grid-template-columns: repeat(${({ itemCount }) => itemCount + 0}, auto);
+    justify-content: flex-start;
   }
 
   /* Workaround: https://stackoverflow.com/questions/38993170/last-margin-padding-collapsing-in-flexbox-grid-layout */

@@ -40,12 +40,12 @@ module.exports = {
   navLinks: {
     menu: [
       {
-        name: "Articles",
-        url: "/#articles",
-      },
-      {
         name: "About Me",
         url: "/#about",
+      },
+      {
+        name: "Interests/Skills",
+        url: "/#interests",
       },
       {
         name: "Projects",

@@ -7,6 +7,7 @@ module.exports = {
     background: "#ffffff",
   },
   breakpoints: {
+    xxs: "358px",
     xs: "480px",
     test: "528px",
     test3: "576px",

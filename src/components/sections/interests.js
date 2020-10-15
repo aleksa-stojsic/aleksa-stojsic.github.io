@@ -66,7 +66,7 @@ const StyledInterests = styled.div`
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.test3}) {
     grid-auto-flow: row;
-    grid-template-columns: repeat(2, 9.813rem);
+    grid-template-columns: repeat(1, 15.625rem);
     overflow: visible;
     padding: 0;
   }
@@ -75,12 +75,14 @@ const StyledInterests = styled.div`
     grid-template-columns: repeat(2, 15.625rem);
     overflow: visible;
     padding: 0;
+    justify-content: center;
   }
   @media (min-width: ${({ theme }) => theme.breakpoints.test2}) {
     grid-auto-flow: row;
     grid-template-columns: repeat(3, 15.625rem);
     overflow: visible;
     padding: 0;
+    justify-content: center;
   }
   /* Show scrollbar if desktop and wrapper width > viewport width */
   @media (hover: hover) {
@@ -115,7 +117,7 @@ const StyledInterests = styled.div`
     border: 0.125rem solid ${({ theme }) => theme.colors.primary};
     border-radius: ${({ theme }) => theme.borderRadius};
     @media (max-width: ${({ theme }) => theme.breakpoints.test3}) {
-      width: 9.813rem;
+      width: 15.625rem;
     }
     .icon {
       margin-right: 0.5rem;
