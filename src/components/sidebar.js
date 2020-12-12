@@ -63,7 +63,7 @@ const StyledNav = styled.nav`
   .cta-btn {
     width: auto;
     height: auto;
-    margin: 1.5rem auto;
+    margin: 1.5rem 0;
     padding: 1rem 1.5rem;
     font-weight: 700;
     font-size: 1.5rem;
