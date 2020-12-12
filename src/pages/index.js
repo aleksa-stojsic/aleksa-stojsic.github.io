@@ -101,7 +101,7 @@ export const pageQuery = graphql`
             icon {
               childImageSharp {
                 fluid(maxWidth: 60, quality: 90) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
@@ -118,7 +118,7 @@ export const pageQuery = graphql`
             image {
               childImageSharp {
                 fluid(maxWidth: 400, quality: 90) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
@@ -138,7 +138,7 @@ export const pageQuery = graphql`
               icon {
                 childImageSharp {
                   fixed(width: 20, height: 20, quality: 90) {
-                    ...GatsbyImageSharpFixed
+                    ...GatsbyImageSharpFixed_withWebp
                   }
                 }
               }
@@ -169,7 +169,7 @@ export const pageQuery = graphql`
             screenshot {
               childImageSharp {
                 fluid(maxWidth: 400, quality: 90) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
@@ -195,7 +195,7 @@ export const pageQuery = graphql`
             profileImage {
               childImageSharp {
                 fluid(maxWidth: 400, quality: 90) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
