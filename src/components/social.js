@@ -73,7 +73,7 @@ const StyledSocialWrapper = styled.div`
   }
 
   a {
-    margin-right: 0.5rem;
+    margin-right: 0;
     margin-bottom: 0.75rem;
     @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
       margin-right: 1rem;
