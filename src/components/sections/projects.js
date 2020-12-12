@@ -361,7 +361,12 @@ const Projects = ({ content }) => {
           aria-label="External Link"
         >
           <Button type="button" textAlign="center" center>
-            <Icon name="github" color="#ffffff" />
+            <Icon
+              name="github"
+              color={
+                darkMode ? lightTheme.colors.primary : darkTheme.colors.primary
+              }
+            />
             {sectionDetails.frontmatter.buttonText}
           </Button>
         </motion.a>

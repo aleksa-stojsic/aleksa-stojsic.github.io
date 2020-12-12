@@ -14,7 +14,7 @@ import { socialMedia } from "../../config"
 const StyledSocialWrapper = styled.div`
   display: grid;
   /* Calculate columns, depending on how many profiles there are */
-  grid-template-columns: repeat(${({ itemCount }) => itemCount + 1}, auto);
+  grid-template-columns: repeat(${({ itemCount }) => itemCount - 2}, auto);
   justify-items: stretch;
   justify-content: normal;
   text-align: center;
