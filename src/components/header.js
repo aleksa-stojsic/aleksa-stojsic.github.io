@@ -77,7 +77,6 @@ const Header = () => {
   const [open, setOpen] = useState(false)
   const [windowWidth, setWindowWidth] = useState(0)
 
-  
   useEffect(() => {
     let handleWindowSizeChange
     // if (isSSR) is necessary to prevent error during the gatsby build
@@ -94,15 +93,16 @@ const Header = () => {
   // Required for animation - start after the splashScreen sequence is done
   const controls = useAnimation()
   useEffect(() => {
-    if (isIntroDone) controls.start({ opacity: 1, y: 0, transition: { delay: 0.2 } })
+    if (isIntroDone)
+      controls.start({ opacity: 1, y: 0, transition: { delay: 0.2 } })
   }, [isIntroDone, controls])
-  
 
   let navigation
   if (detectMobileAndTablet(windowWidth)) {
     navigation = (
       <>
         <StyledBurger
+          aria-label="Menu"
           aria-controls="sidebar"
           open={open}
           onClick={() => setOpen(!open)}
@@ -123,7 +123,7 @@ const Header = () => {
       {/* add blur class to body when sidebar is opened */}
       <Helmet bodyAttributes={{ class: open ? "blur" : "" }} />
       <StyledContentWrapper>
-        <Link to="/" aria-label="home">
+        <Link to="/" aria-label="Home">
           <Logo color="primary" size="2rem" />
         </Link>
         {navigation}
