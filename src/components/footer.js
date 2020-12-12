@@ -51,10 +51,12 @@ const Footer = () => {
   return (
     <StyledFooter darkMode={darkMode}>
       <StyledContentWrapper>
-        <Link to="/" aria-label="home">
+        <Link to="/" aria-label="Home">
           <Logo
             size="1.5rem"
-            color={darkMode ? darkTheme.colors.primary : lightTheme.colors.background}
+            color={
+              darkMode ? darkTheme.colors.primary : lightTheme.colors.background
+            }
           />
         </Link>
         <div className="footer-links">
