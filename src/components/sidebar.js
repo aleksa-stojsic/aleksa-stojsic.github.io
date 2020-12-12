@@ -50,6 +50,7 @@ const StyledNav = styled.nav`
   position: relative;
   right: 0;
   margin-left: auto;
+  align-items: center;
   a {
     color: ${({ theme }) => theme.colors.primary};
   }
@@ -79,11 +80,20 @@ const Sidebar = ({ open, setOpen }) => {
       <StyledContainer open={open} aria-hidden={!open} tabIndex={open ? 1 : -1}>
         <StyledNav>
           {menu.map(({ name, url }, key) => (
-            <Link className="nav-link" key={key} to={url} onClick={() => setOpen(!open)}>
+            <Link
+              className="nav-link"
+              key={key}
+              to={url}
+              onClick={() => setOpen(!open)}
+            >
               {name}
             </Link>
           ))}
-          <Link className="cta-btn" to={button.url} onClick={() => setOpen(!open)}>
+          <Link
+            className="cta-btn"
+            to={button.url}
+            onClick={() => setOpen(!open)}
+          >
             {button.name}
           </Link>
         </StyledNav>
