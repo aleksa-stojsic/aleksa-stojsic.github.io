@@ -113,14 +113,14 @@ const Interests = ({ content }) => {
   const iControls = useAnimation()
   const bControls = useAnimation()
 
-  useEffect(() => {
-    // If mobile or tablet, show all interests initially
-    // Otherwise interests.mdx will determine how many interests are shown
-    // (isSSR) is used to prevent error during gatsby build
-    if (!isSSR && detectMobileAndTablet(window.innerWidth)) {
-      setShownInterests(interests.length)
-    }
-  }, [interests])
+  // useEffect(() => {
+  //   // If mobile or tablet, show all interests initially
+  //   // Otherwise interests.mdx will determine how many interests are shown
+  //   // (isSSR) is used to prevent error during gatsby build
+  //   if (!isSSR && detectMobileAndTablet(window.innerWidth)) {
+  //     setShownInterests(interests.length)
+  //   }
+  // }, [interests])
 
   useEffect(() => {
     const sequence = async () => {
