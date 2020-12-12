@@ -15,15 +15,15 @@ const StyledSocialWrapper = styled.div`
   display: grid;
   /* Calculate columns, depending on how many profiles there are */
   grid-template-columns: repeat(${({ itemCount }) => itemCount + 1}, auto);
-  justify-content: start;
-  justify-items: start;
-
+  justify-items: stretch;
+  justify-content: normal;
+  text-align: center;
   margin-left: -2.5rem;
   margin-right: -2.5rem;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
 
-  overflow-x: scroll;
+  overflow-x: hidden;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   &::-webkit-scrollbar {
