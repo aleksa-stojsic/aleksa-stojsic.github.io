@@ -29,7 +29,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
 
 // https://css-tricks.com/hamburger-menu-with-a-side-of-react-hooks-and-styled-components/
 const StyledBurger = styled.button`
-  z-index: 12;
+  z-index: 9999999;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

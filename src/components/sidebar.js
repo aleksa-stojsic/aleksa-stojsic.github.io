@@ -51,7 +51,6 @@ const StyledNav = styled.nav`
   right: 0;
   margin-left: auto;
   align-items: center;
-  z-index: 999999;
   a {
     color: ${({ theme }) => theme.colors.primary};
   }
