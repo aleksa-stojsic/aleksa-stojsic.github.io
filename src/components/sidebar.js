@@ -29,7 +29,7 @@ const StyledContainer = styled.div`
   width: 100%;
   height: 100vh;
   outline: 0;
-  z-index: 10;
+  z-index: 999999;
   transition: all 0.3s ease-in-out;
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
   visibility: ${({ open }) => (open ? "visible" : "hidden")};
