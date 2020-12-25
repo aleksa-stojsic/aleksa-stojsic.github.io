@@ -71,6 +71,7 @@ const SplashScreen = () => {
           initial={{ height: "100%" }}
           animate={backdropControls}
         />
+        <div className="snow"></div>
         <Logo
           size="3rem"
           color={
